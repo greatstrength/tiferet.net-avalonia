@@ -1,0 +1,76 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+  <ResourceDictionary.ThemeDictionaries>
+
+    <!-- Light theme variant -->
+    <ResourceDictionary x:Key="Light">
+      <Color x:Key="TiferetPrimary">#6366F1</Color>
+      <Color x:Key="TiferetPrimaryVariant">#4F46E5</Color>
+      <Color x:Key="TiferetSecondary">#14B8A6</Color>
+      <Color x:Key="TiferetBackground">#FFFFFF</Color>
+      <Color x:Key="TiferetSurface">#F8FAFC</Color>
+      <Color x:Key="TiferetOnPrimary">#FFFFFF</Color>
+      <Color x:Key="TiferetOnSecondary">#FFFFFF</Color>
+      <Color x:Key="TiferetOnBackground">#0F172A</Color>
+      <Color x:Key="TiferetOnSurface">#1E293B</Color>
+      <Color x:Key="TiferetOutline">#CBD5E1</Color>
+      <Color x:Key="TiferetError">#DC2626</Color>
+      <Color x:Key="TiferetErrorContainer">#FEE2E2</Color>
+      <Color x:Key="TiferetSuccess">#16A34A</Color>
+      <Color x:Key="TiferetSuccessContainer">#DCFCE7</Color>
+      <Color x:Key="TiferetWarning">#D97706</Color>
+      <Color x:Key="TiferetWarningContainer">#FEF3C7</Color>
+      <Color x:Key="TiferetInfo">#2563EB</Color>
+      <Color x:Key="TiferetInfoContainer">#DBEAFE</Color>
+
+      <SolidColorBrush x:Key="TiferetPrimaryBrush" Color="{StaticResource TiferetPrimary}" />
+      <SolidColorBrush x:Key="TiferetPrimaryVariantBrush" Color="{StaticResource TiferetPrimaryVariant}" />
+      <SolidColorBrush x:Key="TiferetSecondaryBrush" Color="{StaticResource TiferetSecondary}" />
+      <SolidColorBrush x:Key="TiferetBackgroundBrush" Color="{StaticResource TiferetBackground}" />
+      <SolidColorBrush x:Key="TiferetSurfaceBrush" Color="{StaticResource TiferetSurface}" />
+      <SolidColorBrush x:Key="TiferetOnPrimaryBrush" Color="{StaticResource TiferetOnPrimary}" />
+      <SolidColorBrush x:Key="TiferetOnSurfaceBrush" Color="{StaticResource TiferetOnSurface}" />
+      <SolidColorBrush x:Key="TiferetOutlineBrush" Color="{StaticResource TiferetOutline}" />
+      <SolidColorBrush x:Key="TiferetErrorBrush" Color="{StaticResource TiferetError}" />
+      <SolidColorBrush x:Key="TiferetSuccessBrush" Color="{StaticResource TiferetSuccess}" />
+      <SolidColorBrush x:Key="TiferetWarningBrush" Color="{StaticResource TiferetWarning}" />
+    </ResourceDictionary>
+
+    <!-- Dark theme variant -->
+    <ResourceDictionary x:Key="Dark">
+      <Color x:Key="TiferetPrimary">#818CF8</Color>
+      <Color x:Key="TiferetPrimaryVariant">#6366F1</Color>
+      <Color x:Key="TiferetSecondary">#2DD4BF</Color>
+      <Color x:Key="TiferetBackground">#0F172A</Color>
+      <Color x:Key="TiferetSurface">#1E293B</Color>
+      <Color x:Key="TiferetOnPrimary">#0F172A</Color>
+      <Color x:Key="TiferetOnSecondary">#0F172A</Color>
+      <Color x:Key="TiferetOnBackground">#F1F5F9</Color>
+      <Color x:Key="TiferetOnSurface">#E2E8F0</Color>
+      <Color x:Key="TiferetOutline">#475569</Color>
+      <Color x:Key="TiferetError">#F87171</Color>
+      <Color x:Key="TiferetErrorContainer">#7F1D1D</Color>
+      <Color x:Key="TiferetSuccess">#4ADE80</Color>
+      <Color x:Key="TiferetSuccessContainer">#14532D</Color>
+      <Color x:Key="TiferetWarning">#FBBF24</Color>
+      <Color x:Key="TiferetWarningContainer">#78350F</Color>
+      <Color x:Key="TiferetInfo">#60A5FA</Color>
+      <Color x:Key="TiferetInfoContainer">#1E3A5F</Color>
+
+      <SolidColorBrush x:Key="TiferetPrimaryBrush" Color="{StaticResource TiferetPrimary}" />
+      <SolidColorBrush x:Key="TiferetPrimaryVariantBrush" Color="{StaticResource TiferetPrimaryVariant}" />
+      <SolidColorBrush x:Key="TiferetSecondaryBrush" Color="{StaticResource TiferetSecondary}" />
+      <SolidColorBrush x:Key="TiferetBackgroundBrush" Color="{StaticResource TiferetBackground}" />
+      <SolidColorBrush x:Key="TiferetSurfaceBrush" Color="{StaticResource TiferetSurface}" />
+      <SolidColorBrush x:Key="TiferetOnPrimaryBrush" Color="{StaticResource TiferetOnPrimary}" />
+      <SolidColorBrush x:Key="TiferetOnSurfaceBrush" Color="{StaticResource TiferetOnSurface}" />
+      <SolidColorBrush x:Key="TiferetOutlineBrush" Color="{StaticResource TiferetOutline}" />
+      <SolidColorBrush x:Key="TiferetErrorBrush" Color="{StaticResource TiferetError}" />
+      <SolidColorBrush x:Key="TiferetSuccessBrush" Color="{StaticResource TiferetSuccess}" />
+      <SolidColorBrush x:Key="TiferetWarningBrush" Color="{StaticResource TiferetWarning}" />
+    </ResourceDictionary>
+
+  </ResourceDictionary.ThemeDictionaries>
+
+</ResourceDictionary>

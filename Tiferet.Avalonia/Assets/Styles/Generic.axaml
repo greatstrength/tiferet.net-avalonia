@@ -1,0 +1,11 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+  <ResourceDictionary.MergedDictionaries>
+    <ResourceInclude Source="avares://Tiferet.Avalonia/Assets/Controls/TiferetButton.axaml" />
+    <ResourceInclude Source="avares://Tiferet.Avalonia/Assets/Controls/TiferetCard.axaml" />
+    <ResourceInclude Source="avares://Tiferet.Avalonia/Assets/Controls/TiferetTextBlock.axaml" />
+    <ResourceInclude Source="avares://Tiferet.Avalonia/Assets/Controls/TiferetBadge.axaml" />
+  </ResourceDictionary.MergedDictionaries>
+
+</ResourceDictionary>

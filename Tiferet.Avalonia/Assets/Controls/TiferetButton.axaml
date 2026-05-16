@@ -1,0 +1,96 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:ctrl="using:Tiferet.Avalonia.Assets.Controls">
+
+  <ControlTheme x:Key="{x:Type ctrl:TiferetButton}" TargetType="ctrl:TiferetButton">
+    <Setter Property="Cursor" Value="Hand" />
+    <Setter Property="Focusable" Value="True" />
+    <Setter Property="CornerRadius" Value="8" />
+    <Setter Property="Padding" Value="16,8" />
+    <Setter Property="FontSize" Value="14" />
+    <Setter Property="FontWeight" Value="Medium" />
+    <Setter Property="Background" Value="{DynamicResource TiferetPrimaryBrush}" />
+    <Setter Property="Foreground" Value="{DynamicResource TiferetOnPrimaryBrush}" />
+    <Setter Property="BorderThickness" Value="0" />
+    <Setter Property="Template">
+      <ControlTemplate>
+        <Border x:Name="PART_Border"
+                Background="{TemplateBinding Background}"
+                BorderBrush="{TemplateBinding BorderBrush}"
+                BorderThickness="{TemplateBinding BorderThickness}"
+                CornerRadius="{TemplateBinding CornerRadius}"
+                Padding="{TemplateBinding Padding}">
+          <ContentPresenter x:Name="PART_ContentPresenter"
+                            Content="{TemplateBinding Content}"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center" />
+        </Border>
+      </ControlTemplate>
+    </Setter>
+
+    <!-- Transitions -->
+    <Setter Property="Transitions">
+      <Transitions>
+        <BrushTransition Property="Background" Duration="0:0:0.15" />
+        <BrushTransition Property="BorderBrush" Duration="0:0:0.15" />
+        <TransformOperationsTransition Property="RenderTransform" Duration="0:0:0.1" />
+      </Transitions>
+    </Setter>
+    <Setter Property="RenderTransform" Value="scale(1)" />
+
+    <!-- Variant: filled (default) -->
+    <Style Selector="^:filled">
+      <Setter Property="Background" Value="{DynamicResource TiferetPrimaryBrush}" />
+      <Setter Property="Foreground" Value="{DynamicResource TiferetOnPrimaryBrush}" />
+    </Style>
+
+    <!-- Variant: outlined -->
+    <Style Selector="^:outlined">
+      <Setter Property="Background" Value="Transparent" />
+      <Setter Property="Foreground" Value="{DynamicResource TiferetPrimaryBrush}" />
+      <Setter Property="BorderBrush" Value="{DynamicResource TiferetOutlineBrush}" />
+      <Setter Property="BorderThickness" Value="1" />
+    </Style>
+
+    <!-- Variant: text -->
+    <Style Selector="^:text">
+      <Setter Property="Background" Value="Transparent" />
+      <Setter Property="Foreground" Value="{DynamicResource TiferetPrimaryBrush}" />
+    </Style>
+
+    <!-- Variant: tonal -->
+    <Style Selector="^:tonal">
+      <Setter Property="Background" Value="{DynamicResource TiferetSurfaceBrush}" />
+      <Setter Property="Foreground" Value="{DynamicResource TiferetOnSurfaceBrush}" />
+    </Style>
+
+    <!-- Size: sm -->
+    <Style Selector="^:sm">
+      <Setter Property="Padding" Value="12,4" />
+      <Setter Property="FontSize" Value="12" />
+    </Style>
+
+    <!-- Size: lg -->
+    <Style Selector="^:lg">
+      <Setter Property="Padding" Value="24,12" />
+      <Setter Property="FontSize" Value="16" />
+    </Style>
+
+    <!-- Hover -->
+    <Style Selector="^:pointerover">
+      <Setter Property="Opacity" Value="0.9" />
+    </Style>
+
+    <!-- Pressed -->
+    <Style Selector="^:pressed">
+      <Setter Property="RenderTransform" Value="scale(0.97)" />
+      <Setter Property="Opacity" Value="0.8" />
+    </Style>
+
+    <!-- Disabled -->
+    <Style Selector="^:disabled">
+      <Setter Property="Opacity" Value="0.38" />
+    </Style>
+  </ControlTheme>
+
+</ResourceDictionary>
