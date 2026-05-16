@@ -1,0 +1,103 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:ctrl="using:Tiferet.Avalonia.Assets.Controls"
+        xmlns:ctx="using:Tiferet.Avalonia.Examples.Calculator.Contexts"
+        x:Class="Tiferet.Avalonia.Examples.Calculator.MainWindow"
+        x:DataType="ctx:CalculatorViewContext"
+        Title="Tiferet Calculator"
+        Width="400" Height="600"
+        WindowStartupLocation="CenterScreen"
+        Background="{DynamicResource TiferetBackgroundBrush}">
+
+  <DockPanel Margin="16">
+
+    <!-- Error badge -->
+    <ctrl:TiferetBadge DockPanel.Dock="Top"
+                       Label="{Binding ErrorMessage}"
+                       Variant="error"
+                       Margin="0,0,0,8"
+                       IsVisible="{Binding ErrorMessage, Converter={x:Static StringConverters.IsNotNullOrEmpty}}" />
+
+    <!-- Display -->
+    <ctrl:TiferetTextBlock DockPanel.Dock="Top"
+                           Text="{Binding Display}"
+                           TypeScale="DisplaySmall"
+                           HorizontalAlignment="Right"
+                           Margin="0,0,0,16" />
+
+    <!-- History panel -->
+    <Border DockPanel.Dock="Bottom"
+            Margin="0,8,0,0"
+            MaxHeight="120">
+      <ScrollViewer>
+        <ItemsControl ItemsSource="{Binding History}">
+          <ItemsControl.ItemTemplate>
+            <DataTemplate>
+              <ctrl:TiferetCard Elevation="0"
+                                Padding="8"
+                                Margin="0,2">
+                <ctrl:TiferetCard.Content>
+                  <ctrl:TiferetTextBlock Text="{Binding}" TypeScale="BodySmall" />
+                </ctrl:TiferetCard.Content>
+              </ctrl:TiferetCard>
+            </DataTemplate>
+          </ItemsControl.ItemTemplate>
+        </ItemsControl>
+      </ScrollViewer>
+    </Border>
+
+    <!-- Button grid -->
+    <Grid RowDefinitions="*,*,*,*,*" ColumnDefinitions="*,*,*,*" Margin="0,8,0,0">
+
+      <!-- Row 0: Clear, √, ^, ÷ -->
+      <ctrl:TiferetButton Grid.Row="0" Grid.Column="0" Content="C"
+                           Variant="text" Command="{Binding ClearCommand}" />
+      <ctrl:TiferetButton Grid.Row="0" Grid.Column="1" Content="√"
+                           Variant="outlined" Command="{Binding OperatorCommand}" CommandParameter="√" />
+      <ctrl:TiferetButton Grid.Row="0" Grid.Column="2" Content="^"
+                           Variant="outlined" Command="{Binding OperatorCommand}" CommandParameter="^" />
+      <ctrl:TiferetButton Grid.Row="0" Grid.Column="3" Content="÷"
+                           Variant="filled" Command="{Binding OperatorCommand}" CommandParameter="÷" />
+
+      <!-- Row 1: 7, 8, 9, × -->
+      <ctrl:TiferetButton Grid.Row="1" Grid.Column="0" Content="7"
+                           Variant="tonal" Command="{Binding DigitCommand}" CommandParameter="7" />
+      <ctrl:TiferetButton Grid.Row="1" Grid.Column="1" Content="8"
+                           Variant="tonal" Command="{Binding DigitCommand}" CommandParameter="8" />
+      <ctrl:TiferetButton Grid.Row="1" Grid.Column="2" Content="9"
+                           Variant="tonal" Command="{Binding DigitCommand}" CommandParameter="9" />
+      <ctrl:TiferetButton Grid.Row="1" Grid.Column="3" Content="×"
+                           Variant="filled" Command="{Binding OperatorCommand}" CommandParameter="×" />
+
+      <!-- Row 2: 4, 5, 6, - -->
+      <ctrl:TiferetButton Grid.Row="2" Grid.Column="0" Content="4"
+                           Variant="tonal" Command="{Binding DigitCommand}" CommandParameter="4" />
+      <ctrl:TiferetButton Grid.Row="2" Grid.Column="1" Content="5"
+                           Variant="tonal" Command="{Binding DigitCommand}" CommandParameter="5" />
+      <ctrl:TiferetButton Grid.Row="2" Grid.Column="2" Content="6"
+                           Variant="tonal" Command="{Binding DigitCommand}" CommandParameter="6" />
+      <ctrl:TiferetButton Grid.Row="2" Grid.Column="3" Content="-"
+                           Variant="filled" Command="{Binding OperatorCommand}" CommandParameter="-" />
+
+      <!-- Row 3: 1, 2, 3, + -->
+      <ctrl:TiferetButton Grid.Row="3" Grid.Column="0" Content="1"
+                           Variant="tonal" Command="{Binding DigitCommand}" CommandParameter="1" />
+      <ctrl:TiferetButton Grid.Row="3" Grid.Column="1" Content="2"
+                           Variant="tonal" Command="{Binding DigitCommand}" CommandParameter="2" />
+      <ctrl:TiferetButton Grid.Row="3" Grid.Column="2" Content="3"
+                           Variant="tonal" Command="{Binding DigitCommand}" CommandParameter="3" />
+      <ctrl:TiferetButton Grid.Row="3" Grid.Column="3" Content="+"
+                           Variant="filled" Command="{Binding OperatorCommand}" CommandParameter="+" />
+
+      <!-- Row 4: 0 (span 2), ., = -->
+      <ctrl:TiferetButton Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Content="0"
+                           Variant="tonal" Command="{Binding DigitCommand}" CommandParameter="0" />
+      <ctrl:TiferetButton Grid.Row="4" Grid.Column="2" Content="."
+                           Variant="tonal" Command="{Binding DigitCommand}" CommandParameter="." />
+      <ctrl:TiferetButton Grid.Row="4" Grid.Column="3" Content="="
+                           Variant="filled" Command="{Binding EqualsCommand}" />
+    </Grid>
+
+  </DockPanel>
+
+</Window>

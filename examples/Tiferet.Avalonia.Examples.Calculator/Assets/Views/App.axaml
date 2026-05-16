@@ -1,0 +1,9 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:tiferet="using:Tiferet.Avalonia.Assets.Styles"
+             x:Class="Tiferet.Avalonia.Examples.Calculator.App">
+  <Application.Styles>
+    <FluentTheme />
+    <tiferet:TiferetTheme />
+  </Application.Styles>
+</Application>

@@ -1,0 +1,19 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:ctrl="using:Tiferet.Avalonia.Assets.Controls">
+
+  <ControlTheme x:Key="{x:Type ctrl:TiferetTextBlock}" TargetType="ctrl:TiferetTextBlock">
+    <Setter Property="Foreground" Value="{DynamicResource TiferetOnSurfaceBrush}" />
+    <Setter Property="Template">
+      <ControlTemplate>
+        <TextBlock Text="{TemplateBinding Text}"
+                   FontSize="{TemplateBinding FontSize}"
+                   FontWeight="{TemplateBinding FontWeight}"
+                   FontFamily="{TemplateBinding FontFamily}"
+                   Foreground="{TemplateBinding Foreground}"
+                   TextWrapping="Wrap" />
+      </ControlTemplate>
+    </Setter>
+  </ControlTheme>
+
+</ResourceDictionary>

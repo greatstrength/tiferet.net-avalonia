@@ -1,0 +1,15 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="Tiferet.Avalonia.Assets.Styles.TiferetTheme">
+
+  <Styles.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <ResourceInclude Source="avares://Tiferet.Avalonia/Assets/Styles/Colors.axaml" />
+        <ResourceInclude Source="avares://Tiferet.Avalonia/Assets/Styles/Typography.axaml" />
+        <ResourceInclude Source="avares://Tiferet.Avalonia/Assets/Styles/Generic.axaml" />
+      </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+  </Styles.Resources>
+
+</Styles>

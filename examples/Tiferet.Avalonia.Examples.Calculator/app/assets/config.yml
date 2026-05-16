@@ -1,0 +1,82 @@
+interfaces:
+  calculator:
+    Name: Avalonia Calculator
+    AssemblyName: Tiferet.Avalonia.Examples.Calculator
+    TypeName: Tiferet.Avalonia.Examples.Calculator.Events.AddNumber
+    Description: Perform basic calculator operations via Avalonia UI
+
+services:
+  add_number_event:
+    AssemblyName: Tiferet.Avalonia.Examples.Calculator
+    TypeName: Tiferet.Avalonia.Examples.Calculator.Events.AddNumber
+  subtract_number_event:
+    AssemblyName: Tiferet.Avalonia.Examples.Calculator
+    TypeName: Tiferet.Avalonia.Examples.Calculator.Events.SubtractNumber
+  multiply_number_event:
+    AssemblyName: Tiferet.Avalonia.Examples.Calculator
+    TypeName: Tiferet.Avalonia.Examples.Calculator.Events.MultiplyNumber
+  divide_number_event:
+    AssemblyName: Tiferet.Avalonia.Examples.Calculator
+    TypeName: Tiferet.Avalonia.Examples.Calculator.Events.DivideNumber
+  exponentiate_number_event:
+    AssemblyName: Tiferet.Avalonia.Examples.Calculator
+    TypeName: Tiferet.Avalonia.Examples.Calculator.Events.ExponentiateNumber
+const: {}
+
+features:
+  calc:
+    add:
+      Name: Add Number
+      Description: Adds one number to another
+      Steps:
+        - ServiceId: add_number_event
+          Name: Add A and B
+    subtract:
+      Name: Subtract Number
+      Description: Subtracts one number from another
+      Steps:
+        - ServiceId: subtract_number_event
+          Name: Subtract B from A
+    multiply:
+      Name: Multiply Number
+      Description: Multiplies one number by another
+      Steps:
+        - ServiceId: multiply_number_event
+          Name: Multiply A and B
+    divide:
+      Name: Divide Number
+      Description: Divides one number by another
+      Steps:
+        - ServiceId: divide_number_event
+          Name: Divide A by B
+    exp:
+      Name: Exponentiate Number
+      Description: Raises one number to the power of another
+      Steps:
+        - ServiceId: exponentiate_number_event
+          Name: Raise A to the power of B
+    sqrt:
+      Name: Square Root
+      Description: Calculates the square root of a number
+      Steps:
+        - ServiceId: exponentiate_number_event
+          Name: Calculate square root of A
+          Parameters:
+            B: '0.5'
+
+errors:
+  INVALID_INPUT:
+    Name: Invalid Numeric Input
+    Messages:
+      - Lang: en_US
+        Text: 'Value {value} must be a number'
+  DIVISION_BY_ZERO:
+    Name: Division By Zero
+    Messages:
+      - Lang: en_US
+        Text: 'Cannot divide by zero'
+
+logging:
+  formatters: {}
+  handlers: {}
+  loggers: {}
