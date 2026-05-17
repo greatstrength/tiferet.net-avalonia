@@ -1,4 +1,5 @@
 using Microsoft.Extensions.DependencyInjection;
+using Tiferet.Avalonia.Assets.Design;
 using Tiferet.Avalonia.Assets.Styles;
 using Tiferet.Avalonia.Contexts;
 using Tiferet.Blueprints;
@@ -47,6 +48,10 @@ public static class AvaloniaBlueprint
 
         // Register the TiferetTheme as a singleton.
         services.AddSingleton<TiferetTheme>();
+
+        // Resolve and register the active palette from options.
+        var palette = TiferetTheme.ResolvePalette(options);
+        services.AddSingleton(palette);
 
         // Register the options for injection.
         services.AddSingleton(options);
