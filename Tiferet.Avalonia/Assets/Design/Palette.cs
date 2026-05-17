@@ -111,6 +111,52 @@ public sealed record TiferetPalette(
         OnSurface:   Color.Parse("#1E293B"),
         Outline:     Color.Parse("#CBD5E1"));
 
+    // ** factory: custom
+    /// <summary>
+    /// Creates a custom palette by selectively overriding colors from a base palette.
+    /// Unspecified values are inherited from the base (defaults to <see cref="Light"/>).
+    /// </summary>
+    /// <param name="basePalette">The base palette to inherit defaults from. Defaults to <see cref="Light"/>.</param>
+    /// <param name="primary">Optional primary color scale override.</param>
+    /// <param name="secondary">Optional secondary color scale override.</param>
+    /// <param name="neutral">Optional neutral color scale override.</param>
+    /// <param name="semantic">Optional semantic colors override.</param>
+    /// <param name="background">Optional background color override.</param>
+    /// <param name="surface">Optional surface color override.</param>
+    /// <param name="onPrimary">Optional on-primary color override.</param>
+    /// <param name="onSecondary">Optional on-secondary color override.</param>
+    /// <param name="onBackground">Optional on-background color override.</param>
+    /// <param name="onSurface">Optional on-surface color override.</param>
+    /// <param name="outline">Optional outline color override.</param>
+    public static TiferetPalette Custom(
+        TiferetPalette? basePalette = null,
+        ColorScale? primary = null,
+        ColorScale? secondary = null,
+        ColorScale? neutral = null,
+        SemanticColors? semantic = null,
+        Color? background = null,
+        Color? surface = null,
+        Color? onPrimary = null,
+        Color? onSecondary = null,
+        Color? onBackground = null,
+        Color? onSurface = null,
+        Color? outline = null)
+    {
+        var b = basePalette ?? Light();
+        return new TiferetPalette(
+            Primary:      primary ?? b.Primary,
+            Secondary:    secondary ?? b.Secondary,
+            Neutral:      neutral ?? b.Neutral,
+            Semantic:     semantic ?? b.Semantic,
+            Background:   background ?? b.Background,
+            Surface:      surface ?? b.Surface,
+            OnPrimary:    onPrimary ?? b.OnPrimary,
+            OnSecondary:  onSecondary ?? b.OnSecondary,
+            OnBackground: onBackground ?? b.OnBackground,
+            OnSurface:    onSurface ?? b.OnSurface,
+            Outline:      outline ?? b.Outline);
+    }
+
     // ** factory: dark
     /// <summary>
     /// Creates the default dark theme palette.

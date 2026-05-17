@@ -1,3 +1,4 @@
+using CommunityToolkit.Mvvm.ComponentModel;
 using Tiferet.Contexts;
 using Tiferet.Domain;
 
@@ -5,40 +6,32 @@ namespace Tiferet.Avalonia.Contexts;
 
 // *** contexts
 
-// ** context: domain_view_context
+// ** context: domain_view_model
 /// <summary>
-/// A view context that wraps a Tiferet <see cref="DomainObject"/> and exposes it
-/// as a bindable property. Provides helpers to execute features via
-/// <see cref="AppInterfaceContext"/>.
+/// MVVM counterpart to <see cref="DomainViewContext{T}"/>.
+/// Wraps a <see cref="DomainObject"/> as bindable state and provides
+/// helpers to execute features via <see cref="AppInterfaceContext"/>.
+/// Constrains on <see cref="DomainObject"/> (not Aggregate) to maintain
+/// separation between the view layer and the mapper layer.
 /// </summary>
 /// <typeparam name="TModel">The domain model type to bind.</typeparam>
-public abstract class DomainViewContext<TModel> : ViewContext
+public abstract partial class DomainViewModel<TModel> : ViewModelBase
     where TModel : DomainObject
 {
+    // * attribute: state
+    [ObservableProperty]
+    private TModel? _state;
+
     // * attribute: app_context
     private readonly AppInterfaceContext? _appContext;
 
-    // * attribute: state
-    private TModel? _state;
-
-    // *** properties
-
-    // ** property: state
-    /// <summary>
-    /// The current domain model state, bindable to the visual tree.
-    /// </summary>
-    public TModel? State
-    {
-        get => _state;
-        protected set => SetProperty(ref _state, value);
-    }
-
     // * init
     /// <summary>
-    /// Initializes the domain view context with an optional <see cref="AppInterfaceContext"/>
+    /// Initializes the domain view model with an optional <see cref="AppInterfaceContext"/>
     /// for feature execution.
     /// </summary>
-    protected DomainViewContext(AppInterfaceContext? appContext = null)
+    /// <param name="appContext">The application interface context. May be null for design-time or testing.</param>
+    protected DomainViewModel(AppInterfaceContext? appContext = null)
     {
         _appContext = appContext;
     }

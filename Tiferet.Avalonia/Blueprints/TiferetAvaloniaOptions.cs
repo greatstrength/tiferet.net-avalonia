@@ -1,4 +1,5 @@
 using Tiferet.Avalonia.Assets;
+using Tiferet.Avalonia.Assets.Design;
 
 namespace Tiferet.Avalonia.Blueprints;
 
@@ -35,4 +36,13 @@ public class TiferetAvaloniaOptions
     // ** property: font_family
     /// <summary>Optional font family override.</summary>
     public string? FontFamily { get; set; }
+
+    // ** property: custom_palette
+    /// <summary>
+    /// Optional custom palette. When set, the theme uses this palette
+    /// instead of resolving from <see cref="ThemeVariant"/>.
+    /// Use <see cref="TiferetPalette.Custom"/> to build a palette with
+    /// selective overrides.
+    /// </summary>
+    public TiferetPalette? CustomPalette { get; set; }
 }
