@@ -1,0 +1,38 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:ctrl="using:Tiferet.Avalonia.Assets.Controls">
+
+  <ControlTheme x:Key="{x:Type ctrl:TiferetSlider}" TargetType="ctrl:TiferetSlider">
+    <Setter Property="Focusable" Value="True" />
+    <Setter Property="Height" Value="32" />
+    <Setter Property="Template">
+      <ControlTemplate>
+        <Grid RowDefinitions="Auto,Auto">
+          <Slider x:Name="PART_Slider"
+                  Grid.Row="0"
+                  Minimum="{TemplateBinding Minimum}"
+                  Maximum="{TemplateBinding Maximum}"
+                  Value="{TemplateBinding Value, Mode=TwoWay}"
+                  TickFrequency="{TemplateBinding Step}"
+                  IsSnapToTickEnabled="True"
+                  Foreground="{DynamicResource TiferetPrimaryBrush}" />
+
+          <!-- Optional value label -->
+          <TextBlock x:Name="PART_Label"
+                     Grid.Row="1"
+                     Text="{TemplateBinding Value}"
+                     FontSize="12"
+                     Foreground="{DynamicResource TiferetOnSurfaceBrush}"
+                     HorizontalAlignment="Center"
+                     IsVisible="{TemplateBinding ShowLabel}" />
+        </Grid>
+      </ControlTemplate>
+    </Setter>
+
+    <!-- Disabled -->
+    <Style Selector="^:disabled">
+      <Setter Property="Opacity" Value="0.38" />
+    </Style>
+  </ControlTheme>
+
+</ResourceDictionary>

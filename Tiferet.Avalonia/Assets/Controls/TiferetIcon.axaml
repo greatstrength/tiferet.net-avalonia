@@ -1,0 +1,23 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:ctrl="using:Tiferet.Avalonia.Assets.Controls">
+
+  <ControlTheme x:Key="{x:Type ctrl:TiferetIcon}" TargetType="ctrl:TiferetIcon">
+    <Setter Property="Width" Value="{Binding Size, RelativeSource={RelativeSource Self}}" />
+    <Setter Property="Height" Value="{Binding Size, RelativeSource={RelativeSource Self}}" />
+    <Setter Property="Color" Value="{DynamicResource TiferetOnSurfaceBrush}" />
+    <Setter Property="Template">
+      <ControlTemplate>
+        <Viewbox Width="{TemplateBinding Width}"
+                 Height="{TemplateBinding Height}"
+                 Stretch="Uniform">
+          <Canvas Width="24" Height="24">
+            <Path Data="{TemplateBinding Geometry}"
+                  Fill="{TemplateBinding Color}" />
+          </Canvas>
+        </Viewbox>
+      </ControlTemplate>
+    </Setter>
+  </ControlTheme>
+
+</ResourceDictionary>
