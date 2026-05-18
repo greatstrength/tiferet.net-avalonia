@@ -1,0 +1,62 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:ctrl="using:Tiferet.Avalonia.Assets.Controls">
+
+  <ControlTheme x:Key="{x:Type ctrl:TiferetSpinner}" TargetType="ctrl:TiferetSpinner">
+    <Setter Property="Width" Value="32" />
+    <Setter Property="Height" Value="32" />
+    <Setter Property="Template">
+      <ControlTemplate>
+        <Border x:Name="PART_Root"
+                Width="{TemplateBinding Width}"
+                Height="{TemplateBinding Height}"
+                RenderTransformOrigin="0.5,0.5">
+          <Border.RenderTransform>
+            <RotateTransform />
+          </Border.RenderTransform>
+          <!-- Arc spinner ring -->
+          <Arc x:Name="PART_Arc"
+               StrokeThickness="3"
+               Stroke="{DynamicResource TiferetPrimaryBrush}"
+               StartAngle="0"
+               SweepAngle="270" />
+        </Border>
+      </ControlTemplate>
+    </Setter>
+
+    <!-- Active animation -->
+    <Style Selector="^:active /template/ Border#PART_Root">
+      <Style.Animations>
+        <Animation Duration="0:0:0.8"
+                   IterationCount="INFINITE"
+                   PlaybackDirection="Normal">
+          <KeyFrame Cue="0%">
+            <Setter Property="RenderTransform" Value="rotate(0deg)" />
+          </KeyFrame>
+          <KeyFrame Cue="100%">
+            <Setter Property="RenderTransform" Value="rotate(360deg)" />
+          </KeyFrame>
+        </Animation>
+      </Style.Animations>
+    </Style>
+
+    <!-- Size: sm -->
+    <Style Selector="^:sm">
+      <Setter Property="Width" Value="16" />
+      <Setter Property="Height" Value="16" />
+    </Style>
+    <Style Selector="^:sm /template/ Arc#PART_Arc">
+      <Setter Property="StrokeThickness" Value="2" />
+    </Style>
+
+    <!-- Size: lg -->
+    <Style Selector="^:lg">
+      <Setter Property="Width" Value="48" />
+      <Setter Property="Height" Value="48" />
+    </Style>
+    <Style Selector="^:lg /template/ Arc#PART_Arc">
+      <Setter Property="StrokeThickness" Value="4" />
+    </Style>
+  </ControlTheme>
+
+</ResourceDictionary>

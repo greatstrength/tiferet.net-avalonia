@@ -1,0 +1,75 @@
+<ResourceDictionary xmlns="https://github.com/avaloniaui"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:ctrl="using:Tiferet.Avalonia.Assets.Controls">
+
+  <ControlTheme x:Key="{x:Type ctrl:TiferetToggleSwitch}" TargetType="ctrl:TiferetToggleSwitch">
+    <Setter Property="Cursor" Value="Hand" />
+    <Setter Property="Focusable" Value="True" />
+    <Setter Property="Width" Value="48" />
+    <Setter Property="Height" Value="26" />
+    <Setter Property="Template">
+      <ControlTemplate>
+        <Grid ColumnDefinitions="Auto,Auto">
+          <!-- Track -->
+          <Border x:Name="PART_Track"
+                  Grid.Column="0"
+                  Width="{TemplateBinding Width}"
+                  Height="{TemplateBinding Height}"
+                  CornerRadius="13"
+                  Background="{DynamicResource TiferetOutlineBrush}">
+            <!-- Thumb -->
+            <Border x:Name="PART_Thumb"
+                    Width="20"
+                    Height="20"
+                    CornerRadius="10"
+                    Background="{DynamicResource TiferetOnPrimaryBrush}"
+                    HorizontalAlignment="Left"
+                    Margin="3,0,0,0"
+                    VerticalAlignment="Center">
+              <Border.Transitions>
+                <Transitions>
+                  <ThicknessTransition Property="Margin" Duration="0:0:0.15" />
+                </Transitions>
+              </Border.Transitions>
+            </Border>
+          </Border>
+
+          <!-- Label -->
+          <TextBlock Grid.Column="1"
+                     Margin="8,0,0,0"
+                     VerticalAlignment="Center"
+                     FontSize="14"
+                     Foreground="{DynamicResource TiferetOnSurfaceBrush}" />
+        </Grid>
+      </ControlTemplate>
+    </Setter>
+
+    <!-- Checked state -->
+    <Style Selector="^:checked /template/ Border#PART_Track">
+      <Setter Property="Background" Value="{DynamicResource TiferetPrimaryBrush}" />
+    </Style>
+    <Style Selector="^:checked /template/ Border#PART_Thumb">
+      <Setter Property="Margin" Value="25,0,0,0" />
+    </Style>
+
+    <!-- Size: sm -->
+    <Style Selector="^:sm">
+      <Setter Property="Width" Value="36" />
+      <Setter Property="Height" Value="20" />
+    </Style>
+    <Style Selector="^:sm /template/ Border#PART_Thumb">
+      <Setter Property="Width" Value="16" />
+      <Setter Property="Height" Value="16" />
+      <Setter Property="CornerRadius" Value="8" />
+    </Style>
+    <Style Selector="^:sm:checked /template/ Border#PART_Thumb">
+      <Setter Property="Margin" Value="18,0,0,0" />
+    </Style>
+
+    <!-- Disabled -->
+    <Style Selector="^:disabled">
+      <Setter Property="Opacity" Value="0.38" />
+    </Style>
+  </ControlTheme>
+
+</ResourceDictionary>

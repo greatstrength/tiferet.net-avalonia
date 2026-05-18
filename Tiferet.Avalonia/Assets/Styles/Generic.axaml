@@ -6,6 +6,13 @@
     <ResourceInclude Source="avares://Tiferet.Avalonia/Assets/Controls/TiferetCard.axaml" />
     <ResourceInclude Source="avares://Tiferet.Avalonia/Assets/Controls/TiferetTextBlock.axaml" />
     <ResourceInclude Source="avares://Tiferet.Avalonia/Assets/Controls/TiferetBadge.axaml" />
+    <ResourceInclude Source="avares://Tiferet.Avalonia/Assets/Controls/TiferetTextBox.axaml" />
+    <ResourceInclude Source="avares://Tiferet.Avalonia/Assets/Controls/TiferetComboBox.axaml" />
+    <ResourceInclude Source="avares://Tiferet.Avalonia/Assets/Controls/TiferetToggleSwitch.axaml" />
+    <ResourceInclude Source="avares://Tiferet.Avalonia/Assets/Controls/TiferetSlider.axaml" />
+    <ResourceInclude Source="avares://Tiferet.Avalonia/Assets/Controls/TiferetSpinner.axaml" />
+    <ResourceInclude Source="avares://Tiferet.Avalonia/Assets/Controls/TiferetSkeleton.axaml" />
+    <ResourceInclude Source="avares://Tiferet.Avalonia/Assets/Controls/TiferetIcon.axaml" />
   </ResourceDictionary.MergedDictionaries>
 
 </ResourceDictionary>
